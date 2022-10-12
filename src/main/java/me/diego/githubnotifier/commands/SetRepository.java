@@ -1,5 +1,6 @@
 package me.diego.githubnotifier.commands;
 
+import me.diego.githubnotifier.repository.DiscordGuildRepository;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -28,8 +29,12 @@ public class SetRepository extends Command{
 
     @Override
     public void slashHandle(SlashCommandInteractionEvent event) {
-        OptionMapping url = event.getOption("url");
+        String url = event.getOption("url").getAsString();
 
-        event.reply("fodase " + url.getAsString()).queue();
+        String guildId = event.getGuild().getId();
+
+        DiscordGuildRepository.getInstance().saveDiscordInDb(guildId, url);
+
+        event.reply("Saved").queue();
     }
 }

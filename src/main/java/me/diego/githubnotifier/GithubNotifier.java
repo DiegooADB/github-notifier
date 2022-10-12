@@ -9,6 +9,7 @@ public class GithubNotifier {
     //TODO inserir dados no banco de dados
     //TODO Criar uma verificação para saber se existe um banco de dados
     //TODO Criar comando para adicionar um repositorio a ser ouvido
+    //Todo Criar comando para ser possível anunciar alterações em um canal especifico
     public static JDA jda;
 
     public GithubNotifier() throws InterruptedException {
