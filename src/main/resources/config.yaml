@@ -1,1 +1,7 @@
-token: "MTAyOTU0OTE5MzgzNDAwODU4Ng.Gj0alk.U70TFcV8P8u_5IDFuP7JyLJOI96xXi9YjkDwN4"
+db:
+  url: "jdbc:mysql://localhost:3306/github-notifier"
+  username: "root"
+  password: "root"
+
+dev:
+  devGuild: "557338801169629225"
